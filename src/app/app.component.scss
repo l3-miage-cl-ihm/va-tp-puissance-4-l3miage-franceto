@@ -1,0 +1,43 @@
+$W: 32px;
+$R: 28px;
+
+table {
+  td {
+    width: $W;
+    height: $W;
+
+    div {
+      width: $R;
+      height: $R;
+      border: solid black 1px;
+      border-radius: 50%;
+      background-color: white;
+    }
+
+    div.RED {
+      background-color: red;
+    }
+
+    div.YELLOW {
+      background-color: yellow;
+    }
+  }
+}
+
+table.board {
+  border-collapse: collapse;
+
+  td {
+    background-color: grey;
+  }
+}
+
+table.select {
+  td {
+    background-color: white;
+
+    div.select {
+      border-width: 5px;
+    }
+  }
+}

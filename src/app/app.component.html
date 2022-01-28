@@ -1,0 +1,33 @@
+<h1>TD VA Puissance 4</h1>
+
+<table class="select">
+  <tbody>
+    <tr>
+      <td><div class="RED"    [class.select]="current === 'RED'"    (click)="current='RED'"></div></td>
+      <td><div class="YELLOW" [class.select]="current === 'YELLOW'" (click)="current='YELLOW'"></div></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr/>
+<pre>
+Gagnant avec 2 pions alignés : {{winner(2)}}
+Gagnant avec 3 pions alignés : {{winner(3)}}
+Gagnant avec 4 pions alignés : {{winner(4)}}
+</pre>
+
+<hr/>
+
+<table *ngIf="board | async as B" class="board">
+  <tbody>
+    <tr *ngFor="let L of matrix(B)">
+      <td *ngFor="let c of L; index as i" >
+        <div [class]="c" (click)="play(i)"></div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<hr/>
+Message :
+<pre>{{message | json}}</pre>
