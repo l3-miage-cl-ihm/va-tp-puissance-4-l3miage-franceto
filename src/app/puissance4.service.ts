@@ -1,13 +1,21 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { Board, emptyBoard, initReturns, playReturns, Puissance4Interface, Token, winnerReturns } from './puissance4.data';
+import {
+  Board,
+  emptyBoard,
+  initReturns,
+  playReturns,
+  Puissance4Interface,
+  Token,
+  winnerReturns,
+} from './puissance4.data';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class Puissance4Service implements Puissance4Interface {
   private readonly _boardSubj = new BehaviorSubject<Board>(emptyBoard);
-  public  readonly boardObs = this._boardSubj.asObservable();
+  public readonly boardObs = this._boardSubj.asObservable();
 
   /** The current board managed by the service \
    * board[i][j] is the position at column i, line j \
@@ -16,9 +24,13 @@ export class Puissance4Service implements Puissance4Interface {
    * 2          \
    * 1          \
    * 0 1 2 3 4
-  */
-  get board(): Board  {return this._boardSubj.value}
-  set board(b: Board) {this._boardSubj.next(b)}
+   */
+  get board(): Board {
+    return this._boardSubj.value;
+  }
+  set board(b: Board) {
+    this._boardSubj.next(b);
+  }
   /**
    * Initialize the board.
    * Errors should be considered in order (if several errors are possible, returns the first one in the following list)
@@ -29,8 +41,36 @@ export class Puissance4Service implements Puissance4Interface {
    *                                   or if data has different magnitudes than width and height (if they are valid ones).
    */
   init(board: Board): initReturns {
+    if (board.height < 1 || board.width < 1) {
+      console.log('Init : ', { error: 'invalid magnitudes' });
+      return { error: 'invalid magnitudes' };
+    }
+
+    if (!board.data.every((col) => col.length <= board.height)) {
+      console.log('Init : ', { error: 'invalid data' });
+      return { error: 'invalid data' };
+    }
+
+    let nbRed: number = 0;
+    let nbYellow: number = 0;
+    board.data.forEach((row) =>
+      row.forEach((c) => {
+        if (c === 'RED') {
+          nbRed++;
+        } else {
+          nbYellow++;
+        }
+      })
+    );
+
+    if (nbRed !== nbYellow && nbRed !== nbYellow + 1) {
+      console.log('Init : ', { error: 'invalid data' });
+      return { error: 'invalid data' };
+    }
+
     this.board = board;
-    return {error: undefined, board};
+    console.log('Init : ', { error: undefined, board });
+    return { error: undefined, board };
   }
 
   /**
@@ -45,7 +85,7 @@ export class Puissance4Service implements Puissance4Interface {
    * @returns \{error: 'not your turn'} As RED begins, then #RED should be equals to #YELLOW or #YELLOW + 1.
    */
   play(token: Token, column: number): playReturns {
-    return {error: 'not your turn'};
+    return { error: 'not your turn' };
   }
 
   /**
@@ -62,4 +102,3 @@ export class Puissance4Service implements Puissance4Interface {
     return 'NONE';
   }
 }
-
