@@ -48,3 +48,5 @@ Thumbs.db
 
 # stryker temp files
 .stryker-tmp
+
+karma.conf.js
