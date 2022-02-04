@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Data } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import {
   Board,
@@ -85,7 +86,42 @@ export class Puissance4Service implements Puissance4Interface {
    * @returns \{error: 'not your turn'} As RED begins, then #RED should be equals to #YELLOW or #YELLOW + 1.
    */
   play(token: Token, column: number): playReturns {
-    return { error: 'not your turn' };
+    if (column > this.board.width || column < 0) {
+      return { error: 'out of range' };
+    }
+    console.log('test :', this.board.data[column][this.board.height]);
+    if (this.board.data[column][this.board.height] !== undefined) {
+      return { error: 'column is full' };
+    }
+
+    var nbRed: number = 0;
+    var nbYellow: number = 0;
+    this.board.data.forEach((row) =>
+      row.forEach((c) => {
+        if (c === 'RED') {
+          nbRed++;
+        } else {
+          nbYellow++;
+        }
+      })
+    );
+    if (token === 'RED') {
+      nbRed++;
+    } else if (token === 'YELLOW') {
+      nbYellow++;
+    }
+    if (nbRed !== nbYellow || nbRed != nbYellow + 1) {
+      return { error: 'not your turn' };
+    }
+    var i = 0;
+    while (i < this.board.height && this.board.data[column] !== undefined) {
+      i++;
+    }
+    var nBoard: Board = {
+      ...this.board,
+      data: this.board.data.map((L,i)=>i!=column?L:[...L,token])
+    };
+    return { error: undefined, board: nBoard };
   }
 
   /**
