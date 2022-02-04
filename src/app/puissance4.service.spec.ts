@@ -6,6 +6,7 @@ import {
   genBoardResult,
   initReturns,
   similarBoard,
+  Token,
   winnerReturns,
 } from './puissance4.data';
 import { Puissance4Service } from './puissance4.service';
@@ -23,6 +24,8 @@ describe('Puissance4Service test init', () => {
     expect(service).toBeTruthy();
   });
 
+  // Tests init()
+
   it('should init an empty 7x5', () => {
     const b: Board = {
       width: 7,
@@ -33,7 +36,6 @@ describe('Puissance4Service test init', () => {
     expect(R.error).toBeUndefined();
     expect(service.board).toBe(b);
   });
-
 
   it('Undefined is expected when the board is valid', () => {
     const b: Board = {
@@ -54,6 +56,7 @@ describe('Puissance4Service test init', () => {
     const R = service.init(b);
     expect(R.error === 'invalid magnitudes').toBe(true);
   });
+
   it('Invalid data is expected when the number of token of each color is not egal or +1', () => {
     const b: Board = {
       width: 7,
@@ -63,7 +66,184 @@ describe('Puissance4Service test init', () => {
     const R = service.init(b);
     expect(R.error === 'invalid data').toBe(true);
   });
+
+  // Tests play()
+
+  it('should allow the play of the given token to the given column', () => {
+    let b: Board;
+    const gb = genBoard(` |
+                          |
+                          |
+                          |
+                          |  RYR
+                          |-------`);
+    const token: Token = 'YELLOW';
+    const column: number = 2;
+    if (gb.error === undefined) {
+      b = gb.board;
+      const R = service.init(b);
+      expect(R.error).toBeUndefined();
+      const RP = service.play(token, column);
+      expect(RP.error).toBeUndefined();
+    }
+  });
+
+  it('should allow the play of the given token to the given column', () => {
+    let b: Board;
+    const gb = genBoard(` |
+                          |
+                          |
+                          |
+                          |  RYR
+                          |-------`);
+    const token: Token = 'YELLOW';
+    const column: number = 6;
+    if (gb.error === undefined) {
+      b = gb.board;
+      const R = service.init(b);
+      expect(R.error).toBeUndefined();
+      const RP = service.play(token, column);
+      expect(RP.error).toBeUndefined();
+    }
+  });
+
+  it('expect out of range error', () => {
+    let b: Board;
+    const gb = genBoard(` |
+                          |
+                          |
+                          |
+                          |  RYR
+                          |-------`);
+    const token: Token = 'RED'
+    const column: number = 7;
+    if (gb.error === undefined) {
+      b = gb.board;
+      const R = service.init(b);
+      expect(R.error).toBeUndefined();
+      const RP = service.play(token, column);
+      expect(RP.error === 'out of range').toBeTrue();
+    }
+  });
+
+  it('expect out of range error', () => {
+    let b: Board;
+    const gb = genBoard(` |
+                          |
+                          |
+                          |
+                          |  RYR
+                          |-------`);
+    const token: Token = 'RED'
+    const column: number = -1;
+    if (gb.error === undefined) {
+      b = gb.board;
+      const R = service.init(b);
+      expect(R.error).toBeUndefined();
+      const RP = service.play(token, column);
+      expect(RP.error === 'out of range').toBeTrue();
+    }
+  });
+
+  it('expect column is full error', () => {
+    let b: Board;
+    const gb = genBoard(` |  R
+                          |  Y
+                          |  R
+                          |  Y
+                          |  R
+                          |-------`);
+    const token: Token = 'YELLOW'
+    const column: number = 2;
+    if (gb.error === undefined) {
+      b = gb.board;
+      const R = service.init(b);
+      expect(R.error).toBeUndefined();
+      const RP = service.play(token, column);
+      expect(RP.error === 'column is full').toBeTrue();
+    }
+  });
+
+  it('expect column is full error', () => {
+    let b: Board;
+    const gb = genBoard(` |R 
+                          |Y
+                          |R
+                          |Y
+                          |R
+                          |-------`);
+    const token: Token = 'YELLOW'
+    const column: number = 0;
+    if (gb.error === undefined) {
+      b = gb.board;
+      const R = service.init(b);
+      expect(R.error).toBeUndefined();
+      const RP = service.play(token, column);
+      expect(RP.error === 'column is full').toBeTrue();
+    }
+  });
+
+  it('expect column is full error', () => {
+    let b: Board;
+    const gb = genBoard(` |      R 
+                          |      Y
+                          |      R
+                          |      Y
+                          |      R
+                          |-------`);
+    const token: Token = 'YELLOW'
+    const column: number = 6;
+    if (gb.error === undefined) {
+      b = gb.board;
+      const R = service.init(b);
+      expect(R.error).toBeUndefined();
+      const RP = service.play(token, column);
+      expect(RP.error === 'column is full').toBeTrue();
+    }
+  });
+
+  it('expect not your turn error', () => {
+    let b: Board;
+    const gb = genBoard(` |
+                          |
+                          |
+                          |
+                          |
+                          |-------`);
+    const token: Token = 'YELLOW'
+    const column: number = 4;
+    if (gb.error === undefined) {
+      b = gb.board;
+      const R = service.init(b);
+      expect(R.error).toBeUndefined();
+      const RP = service.play(token, column);
+      expect(RP.error === 'not your turn').toBeTrue();
+    }
+  });
+
+  it('expect not your turn error', () => {
+    let b: Board;
+    const gb = genBoard(` |
+                          |
+                          |
+                          |
+                          | RY
+                          |-------`);
+    const token: Token = 'YELLOW'
+    const column: number = 4;
+    if (gb.error === undefined) {
+      b = gb.board;
+      const R = service.init(b);
+      expect(R.error).toBeUndefined();
+      const RP = service.play(token, column);
+      expect(RP.error === 'not your turn').toBeTrue();
+    }
+  });
+
+
 });
+
+
 
 describe('Puissance4Service test play', () => {
   let service: Puissance4Service;
