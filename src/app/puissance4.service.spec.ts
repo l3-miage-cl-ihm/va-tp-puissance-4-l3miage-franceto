@@ -35,9 +35,25 @@ describe('Puissance4Service test init', () => {
   });
 
 
-  it('Undefined is expected when the board is valid', () => {});
+  it('Undefined is expected when the board is valid', () => {
+    const b: Board = {
+      width: 7,
+      height: 5,
+      data: [['RED', 'YELLOW'], ['RED'], [], [], [], [], []],
+    };
+    const R = service.init(b);
+    expect(R.error === undefined).toBe(true);
+  });
 
-  it('Invalid magnitudes is expected when width or height or > 0', () => {});
+  it('Invalid magnitudes is expected when width or height or > 0', () => {
+    const b: Board = {
+      width: -7,
+      height: 5,
+      data: [['RED', 'YELLOW'], ['YELLOW'], [], [], [], [], []],
+    };
+    const R = service.init(b);
+    expect(R.error === 'invalid magnitudes').toBe(true);
+  });
   it('Invalid data is expected when the number of token of each color is not egal or +1', () => {
     const b: Board = {
       width: 7,
