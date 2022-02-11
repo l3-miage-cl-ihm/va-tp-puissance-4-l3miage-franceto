@@ -86,11 +86,11 @@ export class Puissance4Service implements Puissance4Interface {
    * @returns \{error: 'not your turn'} As RED begins, then #RED should be equals to #YELLOW or #YELLOW + 1.
    */
   play(token: Token, column: number): playReturns {
-    if (column > this.board.width || column < 0) {
+    if (column >= this.board.width || column < 0) {
       return { error: 'out of range' };
     }
-    console.log('test :', this.board.data[column][this.board.height]);
-    if (this.board.data[column][this.board.height] !== undefined) {
+
+    if (this.board.data[column][this.board.height - 1] !== undefined) {
       return { error: 'column is full' };
     }
 
@@ -110,7 +110,7 @@ export class Puissance4Service implements Puissance4Interface {
     } else if (token === 'YELLOW') {
       nbYellow++;
     }
-    if (nbRed !== nbYellow || nbRed != nbYellow + 1) {
+    if (nbRed !== nbYellow && nbRed != nbYellow + 1) {
       return { error: 'not your turn' };
     }
     var i = 0;
@@ -119,7 +119,7 @@ export class Puissance4Service implements Puissance4Interface {
     }
     var nBoard: Board = {
       ...this.board,
-      data: this.board.data.map((L,i)=>i!=column?L:[...L,token])
+      data: this.board.data.map((L, i) => i != column ? L : [...L, token])
     };
     return { error: undefined, board: nBoard };
   }
@@ -135,6 +135,14 @@ export class Puissance4Service implements Puissance4Interface {
    * @returns the token of the winner if any, NONE otherweise
    */
   winner(nb: number): winnerReturns {
+    this.board.data.forEach((col, i) => col.map((c, j) => {
+      console.log(i, j);
+      [[-1, 0], [-1, 1], [0, 1], [1, 1], [1, 0], [1, -1], [0, -1], [-1, -1]].forEach(([hMove, vMove]) => {
+        let x: number = i + hMove;
+        let y: number = j + vMove;
+      })
+    }));
+
     return 'NONE';
   }
 }

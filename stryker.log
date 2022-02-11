@@ -1,0 +1,678 @@
+14:26:19 (6384) INFO ConfigReader Using stryker.conf.json
+14:26:20 (6384) DEBUG BroadcastReporter Broadcasting to reporters ["progress","clear-text","html"]
+14:26:19 (6384) DEBUG ConfigReader Loading config /home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/stryker.conf.json
+14:26:19 (6384) DEBUG ConfigReader Loaded config: {
+  "$schema": "./node_modules/@stryker-mutator/core/schema/stryker-schema.json",
+  "_comment": "This config was generated using 'stryker init'. Please see the guide for more information: https://stryker-mutator.io/docs/stryker-js/guides/angular",
+  "mutate": [
+    "src/app/puissance4.service.ts",
+    "!src/*.ts",
+    "!src/app/*.component.ts",
+    "!src/**/*.spec.ts",
+    "!src/test.ts",
+    "!src/environments/*.ts"
+  ],
+  "testRunner": "karma",
+  "karma": {
+    "configFile": "karma.conf.js",
+    "projectType": "angular-cli",
+    "config": {
+      "browsers": [
+        "ChromeHeadless"
+      ]
+    }
+  },
+  "reporters": [
+    "progress",
+    "clear-text",
+    "html"
+  ],
+  "concurrency": 4,
+  "concurrency_comment": "Recommended to use about half of your available cores when running stryker with angular",
+  "coverageAnalysis": "perTest",
+  "allowConsoleColors": true,
+  "checkers": [],
+  "checkerNodeArgs": [],
+  "maxTestRunnerReuse": 0,
+  "commandRunner": {
+    "command": "npm test"
+  },
+  "clearTextReporter": {
+    "allowColor": true,
+    "logTests": true,
+    "maxTestsToLog": 3
+  },
+  "dashboard": {
+    "baseUrl": "https://dashboard.stryker-mutator.io/api/reports",
+    "reportType": "full"
+  },
+  "eventReporter": {
+    "baseDir": "reports/mutation/events"
+  },
+  "ignorePatterns": [],
+  "fileLogLevel": "trace",
+  "inPlace": false,
+  "logLevel": "debug",
+  "maxConcurrentTestRunners": 9007199254740991,
+  "mutator": {
+    "plugins": null,
+    "excludedMutations": []
+  },
+  "plugins": [
+    "@stryker-mutator/*"
+  ],
+  "appendPlugins": [],
+  "jsonReporter": {
+    "fileName": "reports/mutation/mutation.json"
+  },
+  "disableTypeChecks": "{test,src,lib}/**/*.{js,ts,jsx,tsx,html,vue}",
+  "symlinkNodeModules": true,
+  "tempDirName": ".stryker-tmp",
+  "cleanTempDir": true,
+  "testRunnerNodeArgs": [],
+  "thresholds": {
+    "high": 80,
+    "low": 60,
+    "break": null
+  },
+  "timeoutFactor": 1.5,
+  "timeoutMS": 5000,
+  "dryRunTimeoutMinutes": 5,
+  "tsconfigFile": "tsconfig.json",
+  "warnings": true,
+  "disableBail": false,
+  "configFile": "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/stryker.conf.json"
+}
+14:26:19 (6384) DEBUG PluginLoader Loading @stryker-mutator/* from /home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/@stryker-mutator
+14:26:19 (6384) DEBUG PluginLoader Loading plugin "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/@stryker-mutator/instrumenter" (matched with expression @stryker-mutator/*)
+14:26:20 (6384) WARN InputFileResolver Glob pattern "!src/*.ts" did not exclude any files.
+14:26:19 (6384) DEBUG PluginLoader Loading plugin "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/@stryker-mutator/karma-runner" (matched with expression @stryker-mutator/*)
+14:26:19 (6384) DEBUG PluginLoader Loading plugins /home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/@stryker-mutator/instrumenter
+14:26:20 (6384) WARN InputFileResolver Glob pattern "!src/app/*.component.ts" did not exclude any files.
+14:26:19 (6384) DEBUG PluginLoader Loading plugins /home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/@stryker-mutator/karma-runner
+14:26:20 (6384) WARN InputFileResolver Glob pattern "!src/**/*.spec.ts" did not exclude any files.
+14:26:20 (6384) DEBUG PluginLoader Loading plugins /home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/@stryker-mutator/core/dist/src/reporters/index.js
+14:26:20 (6384) WARN InputFileResolver Glob pattern "!src/test.ts" did not exclude any files.
+14:26:20 (6384) DEBUG buildSchemaWithPluginContributions Contributing 1 schemas from plugins to options validation.
+14:26:20 (6384) WARN InputFileResolver Glob pattern "!src/environments/*.ts" did not exclude any files.
+14:26:20 (6384) INFO InputFileResolver Found 1 of 114 file(s) to be mutated.
+14:26:20 (6384) DEBUG InputFileResolver All input files: [
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/angular-webpack/2e56f777935f8e95cfc5504a3eff5a7e77554063/0.pack",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/angular-webpack/2e56f777935f8e95cfc5504a3eff5a7e77554063/1.pack",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/angular-webpack/2e56f777935f8e95cfc5504a3eff5a7e77554063/2.pack",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/angular-webpack/2e56f777935f8e95cfc5504a3eff5a7e77554063/3.pack",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/angular-webpack/2e56f777935f8e95cfc5504a3eff5a7e77554063/4.pack",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/angular-webpack/2e56f777935f8e95cfc5504a3eff5a7e77554063/5.pack",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/angular-webpack/2e56f777935f8e95cfc5504a3eff5a7e77554063/6.pack",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/angular-webpack/2e56f777935f8e95cfc5504a3eff5a7e77554063/7.pack",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/angular-webpack/2e56f777935f8e95cfc5504a3eff5a7e77554063/8.pack",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/angular-webpack/2e56f777935f8e95cfc5504a3eff5a7e77554063/9.pack",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/angular-webpack/2e56f777935f8e95cfc5504a3eff5a7e77554063/index.pack",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/angular-webpack/2e56f777935f8e95cfc5504a3eff5a7e77554063/index.pack.old",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/angular-webpack/f948a57e2d512e17718661c3d878ac42b94a4f39/0.pack",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/angular-webpack/f948a57e2d512e17718661c3d878ac42b94a4f39/1.pack",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/angular-webpack/f948a57e2d512e17718661c3d878ac42b94a4f39/2.pack",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/angular-webpack/f948a57e2d512e17718661c3d878ac42b94a4f39/3.pack",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/angular-webpack/f948a57e2d512e17718661c3d878ac42b94a4f39/4.pack",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/angular-webpack/f948a57e2d512e17718661c3d878ac42b94a4f39/5.pack",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/angular-webpack/f948a57e2d512e17718661c3d878ac42b94a4f39/6.pack",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/angular-webpack/f948a57e2d512e17718661c3d878ac42b94a4f39/7.pack",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/angular-webpack/f948a57e2d512e17718661c3d878ac42b94a4f39/index.pack",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/angular-webpack/f948a57e2d512e17718661c3d878ac42b94a4f39/index.pack.old",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/0cbaea265c8da99ce7dc0537f6272251.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/0f797301db23f4ba0814aeabd055fc4e.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/111b4f0168e40d8848352b8619409810.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/190de167b5817bc556e9e6789753317f.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/1f873c600b67fb2abb347238fd22b242.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/2717d594166780025c3a9c9234699145.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/27fd707d7bab59a39d33e76495548109.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/2ba2e48d17db89cf0fe8aab0577d5943.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/2dbe5aa8bb08cf0a7f9e7320a5c9c258.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/3c489acf601b3356492e420b70de68d9.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/3ea60b74e7617219af1afa08c8bd9b8d.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/4869c20f3189df4bdfae0ae5d546182d.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/48ccd05761518f0698ec2a10e20d39d7.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/48dfc9b136dd9a9f20855875b5987ded.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/4930bd0c49597eb9b8e2dc65e83c105a.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/498398fa397feea4f563aa6b70080a9e.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/49d67bd34b1e660a902130c0cb4db0d6.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/4d1b0ad3be75b06841e2991dd1006a81.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/5009b10ff3c1cee39890a1c49caaad63.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/52cf6248420be648ab0adcde70d327b4.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/5413b77529f5601c2382dae5eceb3568.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/5d3db8936e49583f2c7134f89a303c1f.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/5f0ac78d0145e68998592354732c1228.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/6d21a9e11b2a5bab9a1e6e93c6e7a1bb.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/6d7e892bfed0cd738238e8f05da7ca0d.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/6ee4628e8037b91d5fbf8a62d432588f.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/7a13c022097781f2f61b66fc8951d1b2.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/844a4fea5d7759610e6f95a37c45eb7f.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/85a4407f98ba2102a9d7f05d563dbef6.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/8c58ea3fc137d61e5f76b38cabe086f6.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/905f1d64706e692d0c6b6193b17c37e3.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/972ce1df76aaa987307dbe3697409e9b.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/994de62e27f095e680e437866f9c12b2.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/a5aca91b1082e77875b5196751a8ef7d.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/a839ce0d908416c8688e7f81c008bc51.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/a8e0951006ccdc24b0d1f594020a4d2a.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/aab251ea13c2993ea2a6d6ef9f73355f.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/b38f7649717385c41149726b265829f5.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/bb0939ffef09d17cd54fa50fb1846e16.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/bd2a98444448367fdb62679fe9b14b76.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/bfb3f2d3c74b71b71c6cc4917ee0be0f.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/c0936f29a350d3c5ac623c54e36a5b06.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/c0c787b60c766bdea58f85da6fd94308.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/c924bc188ac60a872cb4238b43e63e17.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/cb2d0347fb3b01981695d2c0e16a09ab.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/cb392297173200249841b52432ca571a.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/cb95a1a56f76c0a5f7d2400627674514.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/d7876e169798d728aca9dcc253b21ceb.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/dedfde9741d694aa5985865987f4ca28.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/df9e69d842274ae7cafe8d6c0dc20c03.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/e35c91985a088852006d1af18a5fac25.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/e4848e3010bede595ecdda4e50d7836c.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.browserslistrc",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.editorconfig",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.gitignore",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.vscode/launch.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/README.md",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/angular.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/coverage/td-va-kj-01-puissance4/base.css",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/coverage/td-va-kj-01-puissance4/block-navigation.js",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/coverage/td-va-kj-01-puissance4/favicon.png",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/coverage/td-va-kj-01-puissance4/index.html",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/coverage/td-va-kj-01-puissance4/prettify.css",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/coverage/td-va-kj-01-puissance4/prettify.js",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/coverage/td-va-kj-01-puissance4/puissance4.data.ts.html",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/coverage/td-va-kj-01-puissance4/puissance4.service.ts.html",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/coverage/td-va-kj-01-puissance4/sort-arrow-sprite.png",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/coverage/td-va-kj-01-puissance4/sorter.js",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/karma.conf.js",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/package-lock.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/package.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/src/app/app.component.html",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/src/app/app.component.scss",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/src/app/app.component.ts",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/src/app/app.module.ts",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/src/app/puissance4.data.ts",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/src/app/puissance4.service.spec.ts",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/src/app/puissance4.service.ts",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/src/app/utils.alx.ts",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/src/assets/.gitkeep",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/src/environments/environment.prod.ts",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/src/environments/environment.ts",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/src/favicon.ico",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/src/index.html",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/src/main.ts",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/src/polyfills.ts",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/src/styles.scss",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/src/test.ts",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/stryker.conf.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/tsconfig.app.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/tsconfig.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/tsconfig.spec.json"
+]
+14:26:20 (6384) DEBUG InputFileResolver Files to mutate: [
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/src/app/puissance4.service.ts"
+]
+14:26:20 (6384) DEBUG TemporaryDirectory Using temp directory "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.stryker-tmp"
+14:26:20 (6384) DEBUG Instrumenter Instrumenting 1 source files with mutants
+14:26:20 (6384) DEBUG Instrumenter Instrumented src/app/puissance4.service.ts (140 mutant(s))
+14:26:20 (6384) INFO Instrumenter Instrumented 1 source file(s) with 140 mutant(s)
+14:26:21 (6384) DEBUG TSConfigPreprocessor Rewriting file File {
+  name: '/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/tsconfig.json',
+  _content: <Buffer 2f 2a 20 54 6f 20 6c 65 61 72 6e 20 6d 6f 72 65 20 61 62 6f 75 74 20 74 68 69 73 20 66 69 6c 65 20 73 65 65 3a 20 68 74 74 70 73 3a 2f 2f 61 6e 67 75 ... 813 more bytes>,
+  _textContent: '/* To learn more about this file see: https://angular.io/config/tsconfig. */\n' +
+    '{\n' +
+    '  "compileOnSave": false,\n' +
+    '  "compilerOptions": {\n' +
+    '    "baseUrl": "./",\n' +
+    '    "outDir": "./dist/out-tsc",\n' +
+    '    "forceConsistentCasingInFileNames": true,\n' +
+    '    "strict": true,\n' +
+    '    "noImplicitOverride": true,\n' +
+    '    "noPropertyAccessFromIndexSignature": true,\n' +
+    '    "noImplicitReturns": true,\n' +
+    '    "noFallthroughCasesInSwitch": true,\n' +
+    '    "sourceMap": true,\n' +
+    '    "declaration": false,\n' +
+    '    "downlevelIteration": true,\n' +
+    '    "experimentalDecorators": true,\n' +
+    '    "moduleResolution": "node",\n' +
+    '    "importHelpers": true,\n' +
+    '    "target": "es2017",\n' +
+    '    "module": "es2020",\n' +
+    '    "lib": [\n' +
+    '      "es2020",\n' +
+    '      "dom"\n' +
+    '    ]\n' +
+    '  },\n' +
+    '  "angularCompilerOptions": {\n' +
+    '    "enableI18nLegacyMessageIdFormat": false,\n' +
+    '    "strictInjectionParameters": true,\n' +
+    '    "strictInputAccessModifiers": true,\n' +
+    '    "strictTemplates": true\n' +
+    '  }\n' +
+    '}\n'
+}
+14:26:21 (6384) INFO ConcurrencyTokenProvider Creating 4 test runner process(es).
+14:26:21 (6384) DEBUG ChildProcessProxy Started CheckerWorker in child process 6400
+14:26:22 (6384) DEBUG Sandbox Creating a sandbox for files in /home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.stryker-tmp/sandbox3496503
+14:26:21 (6400) DEBUG PluginLoader Loading @stryker-mutator/* from /home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/@stryker-mutator
+14:26:21 (6400) DEBUG PluginLoader Loading plugin "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/@stryker-mutator/instrumenter" (matched with expression @stryker-mutator/*)
+14:26:21 (6400) DEBUG PluginLoader Loading plugin "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/@stryker-mutator/karma-runner" (matched with expression @stryker-mutator/*)
+14:26:21 (6400) DEBUG PluginLoader Loading plugins /home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/@stryker-mutator/instrumenter
+14:26:22 (6400) DEBUG PluginLoader Loading plugins /home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/@stryker-mutator/karma-runner
+14:26:22 (6400) DEBUG PluginLoader Loading plugins /home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/@stryker-mutator/core/dist/src/reporters/index.js
+14:26:22 (6384) DEBUG Sandbox Start symlink node_modules
+14:26:22 (6384) DEBUG Sandbox Create symlink from /home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules to /home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.stryker-tmp/sandbox3496503/node_modules
+14:26:22 (6384) DEBUG ChildProcessProxy Started ChildProcessTestRunnerWorker in child process 6412
+14:26:22 (6384) DEBUG ChildProcessProxy Started ChildProcessTestRunnerWorker in child process 6418
+14:26:22 (6412) DEBUG ChildProcessProxyWorker Changing current working directory for this process to /home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.stryker-tmp/sandbox3496503
+14:26:22 (6412) DEBUG PluginLoader Loading @stryker-mutator/* from /home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/@stryker-mutator
+14:26:22 (6412) DEBUG PluginLoader Loading plugin "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/@stryker-mutator/instrumenter" (matched with expression @stryker-mutator/*)
+14:26:22 (6412) DEBUG PluginLoader Loading plugin "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/@stryker-mutator/karma-runner" (matched with expression @stryker-mutator/*)
+14:26:22 (6412) DEBUG PluginLoader Loading plugins /home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/@stryker-mutator/instrumenter
+14:26:22 (6412) DEBUG PluginLoader Loading plugins /home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/@stryker-mutator/karma-runner
+14:26:23 (6412) DEBUG PluginLoader Loading plugins /home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/@stryker-mutator/core/dist/src/reporters/index.js
+14:26:23 (6412) DEBUG angular-starter.js Starting Angular tests: ng test --progress=false --karma-config=/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/@stryker-mutator/karma-runner/dist/src/starters/stryker-karma.conf.js
+14:26:22 (6418) DEBUG ChildProcessProxyWorker Changing current working directory for this process to /home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.stryker-tmp/sandbox3496503
+14:26:22 (6418) DEBUG PluginLoader Loading @stryker-mutator/* from /home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/@stryker-mutator
+14:26:22 (6418) DEBUG PluginLoader Loading plugin "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/@stryker-mutator/instrumenter" (matched with expression @stryker-mutator/*)
+14:26:22 (6418) DEBUG PluginLoader Loading plugin "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/@stryker-mutator/karma-runner" (matched with expression @stryker-mutator/*)
+14:26:22 (6418) DEBUG PluginLoader Loading plugins /home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/@stryker-mutator/instrumenter
+14:26:23 (6418) DEBUG PluginLoader Loading plugins /home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/@stryker-mutator/karma-runner
+14:26:23 (6418) DEBUG PluginLoader Loading plugins /home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/@stryker-mutator/core/dist/src/reporters/index.js
+14:26:23 (6418) DEBUG angular-starter.js Starting Angular tests: ng test --progress=false --karma-config=/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/@stryker-mutator/karma-runner/dist/src/starters/stryker-karma.conf.js
+14:26:26 (6412) DEBUG stryker-karma.conf.js Importing config from "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.stryker-tmp/sandbox3496503/karma.conf.js"
+14:26:26 (6418) DEBUG stryker-karma.conf.js Importing config from "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.stryker-tmp/sandbox3496503/karma.conf.js"
+14:26:26 (6384) TRACE ChildProcessProxy [32m11 02 2022 14:26:26.558:INFO [karma-server]: [39mKarma v6.3.9 server started at http://localhost:9876/
+
+14:26:26 (6384) TRACE ChildProcessProxy [32m11 02 2022 14:26:26.561:INFO [launcher]: [39mLaunching browsers ChromeHeadless with concurrency unlimited
+
+14:26:26 (6384) TRACE ChildProcessProxy [91m11 02 2022 14:26:26.561:ERROR [launcher]: [39mCannot load browser "ChromeHeadless": it is not registered! Perhaps you are missing some plugin?
+
+14:26:26 (6384) TRACE ChildProcessProxy [91m11 02 2022 14:26:26.562:ERROR [karma-server]: [39mError: Found 1 load error
+    at Server.<anonymous> (/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/karma/lib/server.js:239:26)
+    at Object.onceWrapper (node:events:509:28)
+    at Server.emit (node:events:402:35)
+    at emitListeningNT (node:net:1364:10)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+
+14:26:26 (6384) TRACE ChildProcessProxy (node:6412) [log4js-node-DEP0004] DeprecationWarning: Pattern %d{DATE} is deprecated due to the confusion it causes when used. Please use %d{DATETIME} instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+
+14:26:26 (6384) TRACE ChildProcessProxy (node:6412) [log4js-node-DEP0004] DeprecationWarning: Pattern %d{DATE} is deprecated due to the confusion it causes when used. Please use %d{DATETIME} instead.
+(node:6412) [log4js-node-DEP0004] DeprecationWarning: Pattern %d{DATE} is deprecated due to the confusion it causes when used. Please use %d{DATETIME} instead.
+(node:6412) [log4js-node-DEP0004] DeprecationWarning: Pattern %d{DATE} is deprecated due to the confusion it causes when used. Please use %d{DATETIME} instead.
+
+14:26:26 (6384) TRACE ChildProcessProxy [32m11 02 2022 14:26:26.599:INFO [karma-server]: [39mKarma v6.3.9 server started at http://localhost:9877/
+
+14:26:26 (6384) TRACE ChildProcessProxy [32m11 02 2022 14:26:26.602:INFO [launcher]: [39mLaunching browsers ChromeHeadless with concurrency unlimited
+
+14:26:26 (6384) TRACE ChildProcessProxy [91m11 02 2022 14:26:26.603:ERROR [launcher]: [39mCannot load browser "ChromeHeadless": it is not registered! Perhaps you are missing some plugin?
+
+14:26:26 (6384) TRACE ChildProcessProxy [91m11 02 2022 14:26:26.603:ERROR [karma-server]: [39mError: Found 1 load error
+    at Server.<anonymous> (/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/karma/lib/server.js:239:26)
+    at Object.onceWrapper (node:events:509:28)
+    at Server.emit (node:events:402:35)
+    at emitListeningNT (node:net:1364:10)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+
+14:26:26 (6384) TRACE ChildProcessProxy (node:6418) [log4js-node-DEP0004] DeprecationWarning: Pattern %d{DATE} is deprecated due to the confusion it causes when used. Please use %d{DATETIME} instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+
+14:26:26 (6384) TRACE ChildProcessProxy (node:6418) [log4js-node-DEP0004] DeprecationWarning: Pattern %d{DATE} is deprecated due to the confusion it causes when used. Please use %d{DATETIME} instead.
+(node:6418) [log4js-node-DEP0004] DeprecationWarning: Pattern %d{DATE} is deprecated due to the confusion it causes when used. Please use %d{DATETIME} instead.
+
+14:26:26 (6384) TRACE ChildProcessProxy (node:6418) [log4js-node-DEP0004] DeprecationWarning: Pattern %d{DATE} is deprecated due to the confusion it causes when used. Please use %d{DATETIME} instead.
+
+14:26:29 (6384) DEBUG Stryker Not removing the temp dir because an error occurred
+14:26:29 (6384) ERROR Stryker Unexpected error occurred while running Stryker Error: Error: Karma exited prematurely with exit code 1. Please run stryker with `--logLevel trace` to see the karma logging and figure out what's wrong.
+Error: Karma exited prematurely with exit code 1. Please run stryker with `--logLevel trace` to see the karma logging and figure out what's wrong.
+    at KarmaTestRunner.init (/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/@stryker-mutator/karma-runner/dist/src/karma-test-runner.js:30:19)
+    at async ChildProcessTestRunnerWorker.init (/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/@stryker-mutator/core/dist/src/test-runner/child-process-test-runner-worker.js:14:13)
+    at async ChildProcessProxyWorker.handleCall (/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy-worker.js:66:28)
+    at ChildProcess.<anonymous> (/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:135:68)
+    at ChildProcess.emit (node:events:390:28)
+    at emit (node:internal/child_process:915:12)
+    at processTicksAndRejections (node:internal/process/task_queues:84:21)
+14:26:29 (6384) INFO Stryker This might be a known problem with a solution documented in our troubleshooting guide.
+14:26:29 (6384) INFO Stryker You can find it at https://stryker-mutator.io/docs/stryker-js/troubleshooting/
+14:26:29 (6384) DEBUG ChildProcessProxy Disposing of worker process 6412
+14:26:29 (6384) DEBUG ChildProcessProxy Kill 6412
+14:26:29 (6384) DEBUG ChildProcessProxy Disposing of worker process 6418
+14:26:29 (6384) DEBUG ChildProcessProxy Kill 6418
+14:26:29 (6384) DEBUG ChildProcessProxy Disposing of worker process 6400
+14:26:29 (6384) DEBUG ChildProcessProxy Kill 6400
+14:42:00 (8551) INFO ConfigReader Using stryker.conf.json
+14:42:00 (8551) DEBUG BroadcastReporter Broadcasting to reporters ["progress","clear-text","html"]
+14:42:00 (8551) DEBUG ConfigReader Loading config /home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/stryker.conf.json
+14:42:00 (8551) DEBUG ConfigReader Loaded config: {
+  "$schema": "./node_modules/@stryker-mutator/core/schema/stryker-schema.json",
+  "_comment": "This config was generated using 'stryker init'. Please see the guide for more information: https://stryker-mutator.io/docs/stryker-js/guides/angular",
+  "mutate": [
+    "src/app/puissance4.service.ts",
+    "!src/*.ts",
+    "!src/app/*.component.ts",
+    "!src/**/*.spec.ts",
+    "!src/test.ts",
+    "!src/environments/*.ts"
+  ],
+  "testRunner": "karma",
+  "karma": {
+    "configFile": "karma.conf.js",
+    "projectType": "angular-cli",
+    "config": {
+      "browsers": [
+        "ChromeHeadless"
+      ]
+    }
+  },
+  "reporters": [
+    "progress",
+    "clear-text",
+    "html"
+  ],
+  "concurrency": 4,
+  "concurrency_comment": "Recommended to use about half of your available cores when running stryker with angular",
+  "coverageAnalysis": "perTest",
+  "allowConsoleColors": true,
+  "checkers": [],
+  "checkerNodeArgs": [],
+  "maxTestRunnerReuse": 0,
+  "commandRunner": {
+    "command": "npm test"
+  },
+  "clearTextReporter": {
+    "allowColor": true,
+    "logTests": true,
+    "maxTestsToLog": 3
+  },
+  "dashboard": {
+    "baseUrl": "https://dashboard.stryker-mutator.io/api/reports",
+    "reportType": "full"
+  },
+  "eventReporter": {
+    "baseDir": "reports/mutation/events"
+  },
+  "ignorePatterns": [],
+  "fileLogLevel": "trace",
+  "inPlace": false,
+  "logLevel": "debug",
+  "maxConcurrentTestRunners": 9007199254740991,
+  "mutator": {
+    "plugins": null,
+    "excludedMutations": []
+  },
+  "plugins": [
+    "@stryker-mutator/*"
+  ],
+  "appendPlugins": [],
+  "jsonReporter": {
+    "fileName": "reports/mutation/mutation.json"
+  },
+  "disableTypeChecks": "{test,src,lib}/**/*.{js,ts,jsx,tsx,html,vue}",
+  "symlinkNodeModules": true,
+  "tempDirName": ".stryker-tmp",
+  "cleanTempDir": true,
+  "testRunnerNodeArgs": [],
+  "thresholds": {
+    "high": 80,
+    "low": 60,
+    "break": null
+  },
+  "timeoutFactor": 1.5,
+  "timeoutMS": 5000,
+  "dryRunTimeoutMinutes": 5,
+  "tsconfigFile": "tsconfig.json",
+  "warnings": true,
+  "disableBail": false,
+  "configFile": "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/stryker.conf.json"
+}
+14:42:00 (8551) WARN InputFileResolver Glob pattern "!src/*.ts" did not exclude any files.
+14:42:00 (8551) DEBUG PluginLoader Loading @stryker-mutator/* from /home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/@stryker-mutator
+14:42:00 (8551) WARN InputFileResolver Glob pattern "!src/app/*.component.ts" did not exclude any files.
+14:42:00 (8551) DEBUG PluginLoader Loading plugin "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/@stryker-mutator/instrumenter" (matched with expression @stryker-mutator/*)
+14:42:00 (8551) WARN InputFileResolver Glob pattern "!src/**/*.spec.ts" did not exclude any files.
+14:42:00 (8551) DEBUG PluginLoader Loading plugin "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/@stryker-mutator/karma-runner" (matched with expression @stryker-mutator/*)
+14:42:00 (8551) WARN InputFileResolver Glob pattern "!src/test.ts" did not exclude any files.
+14:42:00 (8551) DEBUG PluginLoader Loading plugins /home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/@stryker-mutator/instrumenter
+14:42:00 (8551) WARN InputFileResolver Glob pattern "!src/environments/*.ts" did not exclude any files.
+14:42:00 (8551) DEBUG PluginLoader Loading plugins /home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/@stryker-mutator/karma-runner
+14:42:00 (8551) DEBUG PluginLoader Loading plugins /home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/@stryker-mutator/core/dist/src/reporters/index.js
+14:42:00 (8551) DEBUG buildSchemaWithPluginContributions Contributing 1 schemas from plugins to options validation.
+14:42:00 (8551) INFO InputFileResolver Found 1 of 114 file(s) to be mutated.
+14:42:00 (8551) DEBUG InputFileResolver All input files: [
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/angular-webpack/2e56f777935f8e95cfc5504a3eff5a7e77554063/0.pack",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/angular-webpack/2e56f777935f8e95cfc5504a3eff5a7e77554063/1.pack",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/angular-webpack/2e56f777935f8e95cfc5504a3eff5a7e77554063/2.pack",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/angular-webpack/2e56f777935f8e95cfc5504a3eff5a7e77554063/3.pack",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/angular-webpack/2e56f777935f8e95cfc5504a3eff5a7e77554063/4.pack",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/angular-webpack/2e56f777935f8e95cfc5504a3eff5a7e77554063/5.pack",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/angular-webpack/2e56f777935f8e95cfc5504a3eff5a7e77554063/6.pack",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/angular-webpack/2e56f777935f8e95cfc5504a3eff5a7e77554063/7.pack",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/angular-webpack/2e56f777935f8e95cfc5504a3eff5a7e77554063/8.pack",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/angular-webpack/2e56f777935f8e95cfc5504a3eff5a7e77554063/9.pack",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/angular-webpack/2e56f777935f8e95cfc5504a3eff5a7e77554063/index.pack",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/angular-webpack/2e56f777935f8e95cfc5504a3eff5a7e77554063/index.pack.old",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/angular-webpack/f948a57e2d512e17718661c3d878ac42b94a4f39/0.pack",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/angular-webpack/f948a57e2d512e17718661c3d878ac42b94a4f39/1.pack",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/angular-webpack/f948a57e2d512e17718661c3d878ac42b94a4f39/2.pack",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/angular-webpack/f948a57e2d512e17718661c3d878ac42b94a4f39/3.pack",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/angular-webpack/f948a57e2d512e17718661c3d878ac42b94a4f39/4.pack",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/angular-webpack/f948a57e2d512e17718661c3d878ac42b94a4f39/5.pack",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/angular-webpack/f948a57e2d512e17718661c3d878ac42b94a4f39/6.pack",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/angular-webpack/f948a57e2d512e17718661c3d878ac42b94a4f39/7.pack",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/angular-webpack/f948a57e2d512e17718661c3d878ac42b94a4f39/index.pack",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/angular-webpack/f948a57e2d512e17718661c3d878ac42b94a4f39/index.pack.old",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/0cbaea265c8da99ce7dc0537f6272251.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/0f797301db23f4ba0814aeabd055fc4e.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/111b4f0168e40d8848352b8619409810.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/190de167b5817bc556e9e6789753317f.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/1f873c600b67fb2abb347238fd22b242.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/2717d594166780025c3a9c9234699145.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/27fd707d7bab59a39d33e76495548109.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/2ba2e48d17db89cf0fe8aab0577d5943.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/2dbe5aa8bb08cf0a7f9e7320a5c9c258.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/3c489acf601b3356492e420b70de68d9.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/3ea60b74e7617219af1afa08c8bd9b8d.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/4869c20f3189df4bdfae0ae5d546182d.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/48ccd05761518f0698ec2a10e20d39d7.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/48dfc9b136dd9a9f20855875b5987ded.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/4930bd0c49597eb9b8e2dc65e83c105a.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/498398fa397feea4f563aa6b70080a9e.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/49d67bd34b1e660a902130c0cb4db0d6.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/4d1b0ad3be75b06841e2991dd1006a81.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/5009b10ff3c1cee39890a1c49caaad63.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/52cf6248420be648ab0adcde70d327b4.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/5413b77529f5601c2382dae5eceb3568.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/5d3db8936e49583f2c7134f89a303c1f.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/5f0ac78d0145e68998592354732c1228.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/6d21a9e11b2a5bab9a1e6e93c6e7a1bb.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/6d7e892bfed0cd738238e8f05da7ca0d.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/6ee4628e8037b91d5fbf8a62d432588f.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/7a13c022097781f2f61b66fc8951d1b2.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/844a4fea5d7759610e6f95a37c45eb7f.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/85a4407f98ba2102a9d7f05d563dbef6.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/8c58ea3fc137d61e5f76b38cabe086f6.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/905f1d64706e692d0c6b6193b17c37e3.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/972ce1df76aaa987307dbe3697409e9b.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/994de62e27f095e680e437866f9c12b2.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/a5aca91b1082e77875b5196751a8ef7d.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/a839ce0d908416c8688e7f81c008bc51.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/a8e0951006ccdc24b0d1f594020a4d2a.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/aab251ea13c2993ea2a6d6ef9f73355f.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/b38f7649717385c41149726b265829f5.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/bb0939ffef09d17cd54fa50fb1846e16.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/bd2a98444448367fdb62679fe9b14b76.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/bfb3f2d3c74b71b71c6cc4917ee0be0f.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/c0936f29a350d3c5ac623c54e36a5b06.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/c0c787b60c766bdea58f85da6fd94308.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/c924bc188ac60a872cb4238b43e63e17.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/cb2d0347fb3b01981695d2c0e16a09ab.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/cb392297173200249841b52432ca571a.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/cb95a1a56f76c0a5f7d2400627674514.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/d7876e169798d728aca9dcc253b21ceb.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/dedfde9741d694aa5985865987f4ca28.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/df9e69d842274ae7cafe8d6c0dc20c03.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/e35c91985a088852006d1af18a5fac25.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.angular/cache/babel-webpack/e4848e3010bede595ecdda4e50d7836c.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.browserslistrc",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.editorconfig",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.gitignore",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.vscode/launch.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/README.md",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/angular.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/coverage/td-va-kj-01-puissance4/base.css",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/coverage/td-va-kj-01-puissance4/block-navigation.js",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/coverage/td-va-kj-01-puissance4/favicon.png",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/coverage/td-va-kj-01-puissance4/index.html",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/coverage/td-va-kj-01-puissance4/prettify.css",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/coverage/td-va-kj-01-puissance4/prettify.js",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/coverage/td-va-kj-01-puissance4/puissance4.data.ts.html",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/coverage/td-va-kj-01-puissance4/puissance4.service.ts.html",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/coverage/td-va-kj-01-puissance4/sort-arrow-sprite.png",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/coverage/td-va-kj-01-puissance4/sorter.js",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/karma.conf.js",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/package-lock.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/package.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/src/app/app.component.html",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/src/app/app.component.scss",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/src/app/app.component.ts",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/src/app/app.module.ts",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/src/app/puissance4.data.ts",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/src/app/puissance4.service.spec.ts",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/src/app/puissance4.service.ts",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/src/app/utils.alx.ts",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/src/assets/.gitkeep",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/src/environments/environment.prod.ts",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/src/environments/environment.ts",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/src/favicon.ico",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/src/index.html",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/src/main.ts",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/src/polyfills.ts",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/src/styles.scss",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/src/test.ts",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/stryker.conf.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/tsconfig.app.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/tsconfig.json",
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/tsconfig.spec.json"
+]
+14:42:00 (8551) DEBUG InputFileResolver Files to mutate: [
+  "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/src/app/puissance4.service.ts"
+]
+14:42:00 (8551) DEBUG TemporaryDirectory Using temp directory "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.stryker-tmp"
+14:42:00 (8551) DEBUG Instrumenter Instrumenting 1 source files with mutants
+14:42:01 (8551) DEBUG Instrumenter Instrumented src/app/puissance4.service.ts (150 mutant(s))
+14:42:01 (8551) INFO Instrumenter Instrumented 1 source file(s) with 150 mutant(s)
+14:42:01 (8551) DEBUG TSConfigPreprocessor Rewriting file File {
+  name: '/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/tsconfig.json',
+  _content: <Buffer 2f 2a 20 54 6f 20 6c 65 61 72 6e 20 6d 6f 72 65 20 61 62 6f 75 74 20 74 68 69 73 20 66 69 6c 65 20 73 65 65 3a 20 68 74 74 70 73 3a 2f 2f 61 6e 67 75 ... 813 more bytes>,
+  _textContent: '/* To learn more about this file see: https://angular.io/config/tsconfig. */\n' +
+    '{\n' +
+    '  "compileOnSave": false,\n' +
+    '  "compilerOptions": {\n' +
+    '    "baseUrl": "./",\n' +
+    '    "outDir": "./dist/out-tsc",\n' +
+    '    "forceConsistentCasingInFileNames": true,\n' +
+    '    "strict": true,\n' +
+    '    "noImplicitOverride": true,\n' +
+    '    "noPropertyAccessFromIndexSignature": true,\n' +
+    '    "noImplicitReturns": true,\n' +
+    '    "noFallthroughCasesInSwitch": true,\n' +
+    '    "sourceMap": true,\n' +
+    '    "declaration": false,\n' +
+    '    "downlevelIteration": true,\n' +
+    '    "experimentalDecorators": true,\n' +
+    '    "moduleResolution": "node",\n' +
+    '    "importHelpers": true,\n' +
+    '    "target": "es2017",\n' +
+    '    "module": "es2020",\n' +
+    '    "lib": [\n' +
+    '      "es2020",\n' +
+    '      "dom"\n' +
+    '    ]\n' +
+    '  },\n' +
+    '  "angularCompilerOptions": {\n' +
+    '    "enableI18nLegacyMessageIdFormat": false,\n' +
+    '    "strictInjectionParameters": true,\n' +
+    '    "strictInputAccessModifiers": true,\n' +
+    '    "strictTemplates": true\n' +
+    '  }\n' +
+    '}\n'
+}
+14:42:01 (8551) INFO ConcurrencyTokenProvider Creating 4 test runner process(es).
+14:42:01 (8551) DEBUG ChildProcessProxy Started CheckerWorker in child process 8563
+14:42:01 (8563) DEBUG PluginLoader Loading @stryker-mutator/* from /home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/@stryker-mutator
+14:42:01 (8563) DEBUG PluginLoader Loading plugin "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/@stryker-mutator/instrumenter" (matched with expression @stryker-mutator/*)
+14:42:01 (8563) DEBUG PluginLoader Loading plugin "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/@stryker-mutator/karma-runner" (matched with expression @stryker-mutator/*)
+14:42:01 (8563) DEBUG PluginLoader Loading plugins /home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/@stryker-mutator/instrumenter
+14:42:02 (8563) DEBUG PluginLoader Loading plugins /home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/@stryker-mutator/karma-runner
+14:42:02 (8563) DEBUG PluginLoader Loading plugins /home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/@stryker-mutator/core/dist/src/reporters/index.js
+14:42:02 (8551) DEBUG Sandbox Creating a sandbox for files in /home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.stryker-tmp/sandbox9973893
+14:42:02 (8551) DEBUG Sandbox Start symlink node_modules
+14:42:02 (8551) DEBUG Sandbox Create symlink from /home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules to /home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.stryker-tmp/sandbox9973893/node_modules
+14:42:02 (8551) DEBUG ChildProcessProxy Started ChildProcessTestRunnerWorker in child process 8574
+14:42:02 (8551) DEBUG ChildProcessProxy Started ChildProcessTestRunnerWorker in child process 8580
+14:42:02 (8574) DEBUG ChildProcessProxyWorker Changing current working directory for this process to /home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.stryker-tmp/sandbox9973893
+14:42:02 (8574) DEBUG PluginLoader Loading @stryker-mutator/* from /home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/@stryker-mutator
+14:42:02 (8574) DEBUG PluginLoader Loading plugin "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/@stryker-mutator/instrumenter" (matched with expression @stryker-mutator/*)
+14:42:02 (8574) DEBUG PluginLoader Loading plugin "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/@stryker-mutator/karma-runner" (matched with expression @stryker-mutator/*)
+14:42:02 (8574) DEBUG PluginLoader Loading plugins /home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/@stryker-mutator/instrumenter
+14:42:03 (8574) DEBUG PluginLoader Loading plugins /home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/@stryker-mutator/karma-runner
+14:42:03 (8574) DEBUG PluginLoader Loading plugins /home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/@stryker-mutator/core/dist/src/reporters/index.js
+14:42:03 (8574) DEBUG angular-starter.js Starting Angular tests: ng test --progress=false --karma-config=/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/@stryker-mutator/karma-runner/dist/src/starters/stryker-karma.conf.js
+14:42:02 (8580) DEBUG ChildProcessProxyWorker Changing current working directory for this process to /home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/.stryker-tmp/sandbox9973893
+14:42:02 (8580) DEBUG PluginLoader Loading @stryker-mutator/* from /home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/@stryker-mutator
+14:42:02 (8580) DEBUG PluginLoader Loading plugin "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/@stryker-mutator/instrumenter" (matched with expression @stryker-mutator/*)
+14:42:02 (8580) DEBUG PluginLoader Loading plugin "/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/@stryker-mutator/karma-runner" (matched with expression @stryker-mutator/*)
+14:42:02 (8580) DEBUG PluginLoader Loading plugins /home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/@stryker-mutator/instrumenter
+14:42:03 (8580) DEBUG PluginLoader Loading plugins /home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/@stryker-mutator/karma-runner
+14:42:03 (8580) DEBUG PluginLoader Loading plugins /home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/@stryker-mutator/core/dist/src/reporters/index.js
+14:42:03 (8580) DEBUG angular-starter.js Starting Angular tests: ng test --progress=false --karma-config=/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/@stryker-mutator/karma-runner/dist/src/starters/stryker-karma.conf.js
+14:42:05 (8551) TRACE ChildProcessProxy [33m11 02 2022 14:42:05.900:WARN [karma-server]: [39m`autowatch` and `singleRun` are both `false`. In order to execute tests use `karma run`.
+
+14:42:05 (8551) TRACE ChildProcessProxy [33m11 02 2022 14:42:05.977:WARN [karma-server]: [39m`autowatch` and `singleRun` are both `false`. In order to execute tests use `karma run`.
+
+14:42:06 (8551) TRACE ChildProcessProxy [32m11 02 2022 14:42:06.123:INFO [karma-server]: [39mKarma v6.3.16 server started at http://localhost:9876/
+[32m11 02 2022 14:42:06.123:INFO [launcher]: [39mLaunching browsers ChromeHeadless with concurrency unlimited
+[91m11 02 2022 14:42:06.124:ERROR [launcher]: [39mCannot load browser "ChromeHeadless": it is not registered! Perhaps you are missing some plugin?
+
+14:42:06 (8551) TRACE ChildProcessProxy [91m11 02 2022 14:42:06.124:ERROR [karma-server]: [39mError: Found 1 load error
+    at Server.<anonymous> (/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/karma/lib/server.js:243:26)
+    at Object.onceWrapper (node:events:509:28)
+    at Server.emit (node:events:402:35)
+    at emitListeningNT (node:net:1364:10)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+
+14:42:06 (8551) TRACE ChildProcessProxy [32m11 02 2022 14:42:06.198:INFO [karma-server]: [39mKarma v6.3.16 server started at http://localhost:9877/
+[32m11 02 2022 14:42:06.198:INFO [launcher]: [39mLaunching browsers ChromeHeadless with concurrency unlimited
+
+14:42:06 (8551) TRACE ChildProcessProxy [91m11 02 2022 14:42:06.199:ERROR [launcher]: [39mCannot load browser "ChromeHeadless": it is not registered! Perhaps you are missing some plugin?
+
+14:42:06 (8551) TRACE ChildProcessProxy [91m11 02 2022 14:42:06.200:ERROR [karma-server]: [39mError: Found 1 load error
+    at Server.<anonymous> (/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/karma/lib/server.js:243:26)
+    at Object.onceWrapper (node:events:509:28)
+    at Server.emit (node:events:402:35)
+    at emitListeningNT (node:net:1364:10)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+
+14:42:09 (8551) DEBUG Stryker Not removing the temp dir because an error occurred
+14:42:09 (8551) ERROR Stryker Unexpected error occurred while running Stryker Error: Error: Karma exited prematurely with exit code 1. Please run stryker with `--logLevel trace` to see the karma logging and figure out what's wrong.
+Error: Karma exited prematurely with exit code 1. Please run stryker with `--logLevel trace` to see the karma logging and figure out what's wrong.
+    at KarmaTestRunner.init (/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/@stryker-mutator/karma-runner/dist/src/karma-test-runner.js:30:19)
+    at async ChildProcessTestRunnerWorker.init (/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/@stryker-mutator/core/dist/src/test-runner/child-process-test-runner-worker.js:14:13)
+    at async ChildProcessProxyWorker.handleCall (/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy-worker.js:66:28)
+    at ChildProcess.<anonymous> (/home/tom/Bureau/L3/VA/va-tp-puissance-4-l3miage-franceto/node_modules/@stryker-mutator/core/dist/src/child-proxy/child-process-proxy.js:135:68)
+    at ChildProcess.emit (node:events:390:28)
+    at emit (node:internal/child_process:915:12)
+    at processTicksAndRejections (node:internal/process/task_queues:84:21)
+14:42:09 (8551) INFO Stryker This might be a known problem with a solution documented in our troubleshooting guide.
+14:42:09 (8551) INFO Stryker You can find it at https://stryker-mutator.io/docs/stryker-js/troubleshooting/
+14:42:09 (8551) DEBUG ChildProcessProxy Disposing of worker process 8580
+14:42:09 (8551) DEBUG ChildProcessProxy Kill 8580
+14:42:09 (8551) DEBUG ChildProcessProxy Disposing of worker process 8574
+14:42:09 (8551) DEBUG ChildProcessProxy Kill 8574
+14:42:09 (8551) DEBUG ChildProcessProxy Disposing of worker process 8563
+14:42:09 (8551) DEBUG ChildProcessProxy Kill 8563
