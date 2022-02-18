@@ -15,7 +15,7 @@
     "projectType": "angular-cli",
     "config": {
       "browsers": [
-        "ChromeHeadless"
+        "FirefoxHeadless"
       ]
     }
   },

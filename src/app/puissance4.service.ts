@@ -134,15 +134,35 @@ export class Puissance4Service implements Puissance4Interface {
    * @param nb Minimal number of token that have to be aligned (in any of 8 directions) to declare a winner
    * @returns the token of the winner if any, NONE otherweise
    */
-  winner(nb: number): winnerReturns {
-    this.board.data.forEach((col, i) => col.map((c, j) => {
-      console.log(i, j);
-      [[-1, 0], [-1, 1], [0, 1], [1, 1], [1, 0], [1, -1], [0, -1], [-1, -1]].forEach(([hMove, vMove]) => {
-        let x: number = i + hMove;
-        let y: number = j + vMove;
+   winner(nb: number): winnerReturns {
+
+    if(this.init(this.board).error !== undefined || nb < 3){
+      console.log("unvalid board")
+      return 'NONE'
+    }
+
+    let winner: winnerReturns = 'NONE';
+
+    this.board.data.forEach((column, x) => column.forEach((token, y) => {
+      console.log("token", token, "x", x, "y", y, winner);
+      [[0, 1], [1, 1], [1, 0], [1, -1]].forEach(([xMove, yMove]) => {
+        let x2 = x;
+        let y2 = y;
+        let nbToken = 0;
+        while (winner === 'NONE' && x2 >= 0 && x2 < this.board.width && y2 >= 0 && y2 < this.board.data[x2].length && this.board.data[x2][y2] === token) {
+          nbToken++;
+          console.log("  -  token", token, "x2", x2, "y2", y2, "nbToken", nbToken);
+          if (nbToken === nb) {
+            winner = token;
+            console.log("WINNER");
+          } else {
+            x2 += xMove;
+            y2 += yMove;
+          }
+        }
       })
     }));
 
-    return 'NONE';
+    return winner;
   }
 }

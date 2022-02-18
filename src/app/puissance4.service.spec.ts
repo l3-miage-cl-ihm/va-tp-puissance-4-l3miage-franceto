@@ -271,6 +271,176 @@ describe('Puissance4Service test play', () => {
     const res = service.play('YELLOW', 1);
     expect(res.error).toEqual('not your turn');
   });
+  it('should allow the play of the given token to the given column', () => {
+    let b: Board;
+    const gb = genBoard(` |
+                          |
+                          |
+                          |
+                          |  RYR
+                          |-------`);
+    const token: Token = 'YELLOW';
+    const column: number = 2;
+    if (gb.error === undefined) {
+      b = gb.board;
+      const R = service.init(b);
+      expect(R.error).toBeUndefined();
+      const RP = service.play(token, column);
+      expect(RP.error).toBeUndefined();
+    }
+  });
+
+  it('should allow the play of the given token to the given column', () => {
+    let b: Board;
+    const gb = genBoard(` |
+                          |
+                          |
+                          |
+                          |  RYR
+                          |-------`);
+    const token: Token = 'YELLOW';
+    const column: number = 6;
+    if (gb.error === undefined) {
+      b = gb.board;
+      const R = service.init(b);
+      expect(R.error).toBeUndefined();
+      const RP = service.play(token, column);
+      expect(RP.error).toBeUndefined();
+    }
+  });
+
+  it('expect out of range error', () => {
+    let b: Board;
+    const gb = genBoard(` |
+                          |
+                          |
+                          |
+                          |  RYR
+                          |-------`);
+    const token: Token = 'RED'
+    const column: number = 7;
+    if (gb.error === undefined) {
+      b = gb.board;
+      const R = service.init(b);
+      expect(R.error).toBeUndefined();
+      const RP = service.play(token, column);
+      expect(RP.error === 'out of range').toBeTrue();
+    }
+  });
+
+  it('expect out of range error', () => {
+    let b: Board;
+    const gb = genBoard(` |
+                          |
+                          |
+                          |
+                          |  RYR
+                          |-------`);
+    const token: Token = 'RED'
+    const column: number = -1;
+    if (gb.error === undefined) {
+      b = gb.board;
+      const R = service.init(b);
+      expect(R.error).toBeUndefined();
+      const RP = service.play(token, column);
+      expect(RP.error === 'out of range').toBeTrue();
+    }
+  });
+
+  it('expect column is full error', () => {
+    let b: Board;
+    const gb = genBoard(` |  R
+                          |  Y
+                          |  R
+                          |  Y
+                          |  R
+                          |-------`);
+    const token: Token = 'YELLOW'
+    const column: number = 2;
+    if (gb.error === undefined) {
+      b = gb.board;
+      const R = service.init(b);
+      expect(R.error).toBeUndefined();
+      const RP = service.play(token, column);
+      expect(RP.error === 'column is full').toBeTrue();
+    }
+  });
+
+  it('expect column is full error', () => {
+    let b: Board;
+    const gb = genBoard(` |R 
+                          |Y
+                          |R
+                          |Y
+                          |R
+                          |-------`);
+    const token: Token = 'YELLOW'
+    const column: number = 0;
+    if (gb.error === undefined) {
+      b = gb.board;
+      const R = service.init(b);
+      expect(R.error).toBeUndefined();
+      const RP = service.play(token, column);
+      expect(RP.error === 'column is full').toBeTrue();
+    }
+  });
+
+  it('expect column is full error', () => {
+    let b: Board;
+    const gb = genBoard(` |      R 
+                          |      Y
+                          |      R
+                          |      Y
+                          |      R
+                          |-------`);
+    const token: Token = 'YELLOW'
+    const column: number = 6;
+    if (gb.error === undefined) {
+      b = gb.board;
+      const R = service.init(b);
+      expect(R.error).toBeUndefined();
+      const RP = service.play(token, column);
+      expect(RP.error === 'column is full').toBeTrue();
+    }
+  });
+
+  it('expect not your turn error', () => {
+    let b: Board;
+    const gb = genBoard(` |
+                          |
+                          |
+                          |
+                          |
+                          |-------`);
+    const token: Token = 'YELLOW'
+    const column: number = 4;
+    if (gb.error === undefined) {
+      b = gb.board;
+      const R = service.init(b);
+      expect(R.error).toBeUndefined();
+      const RP = service.play(token, column);
+      expect(RP.error === 'not your turn').toBeTrue();
+    }
+  });
+
+  it('expect not your turn error', () => {
+    let b: Board;
+    const gb = genBoard(` |
+                          |
+                          |
+                          |
+                          | RY
+                          |-------`);
+    const token: Token = 'YELLOW'
+    const column: number = 4;
+    if (gb.error === undefined) {
+      b = gb.board;
+      const R = service.init(b);
+      expect(R.error).toBeUndefined();
+      const RP = service.play(token, column);
+      expect(RP.error === 'not your turn').toBeTrue();
+    }
+  });
 });
 
 describe('Puissance4Service test winner', () => {
@@ -294,13 +464,97 @@ describe('Puissance4Service test winner', () => {
     service = TestBed.inject(Puissance4Service);
   });
 
-  it('no winner when starting', () => {
+  it('test 1 / no winner when starting', () => {
     service.init(empty7x5);
     expect(service.winner(1)).toEqual('NONE');
-    expect(service.winner(2)).toEqual('NONE');
+    service.play('RED',1);
     expect(service.winner(3)).toEqual('NONE');
-    expect(service.winner(4)).toEqual('NONE');
-    expect(service.winner(5)).toEqual('NONE');
+
+  });
+
+  it('test 2 / no winner when no one as the rigth number of token align', () => {
+    service.init(empty7x5);
+    expect(service.winner(1)).toEqual('NONE');
+    service.play('RED',1);
+    expect(service.winner(3)).toEqual('NONE');
+    service.play('YELLOW',1);
+    expect(service.winner(3)).toEqual('NONE');
+    service.play('RED',2);
+    expect(service.winner(3)).toEqual('NONE');
+    service.play('YELLOW',3);
+    expect(service.winner(3)).toEqual('NONE');
+    service.play('RED',2);
+    expect(service.winner(3)).toEqual('NONE');
+    service.play('YELLOW',2);
+    expect(service.winner(3)).toEqual('NONE');
+    service.play('RED',3);
+    expect(service.winner(3)).toEqual('NONE');
+    service.play('YELLOW',4);
+    expect(service.winner(3)).toEqual('NONE');
+
+  });
+
+  it('test 3 / red should win', () => {
+    let b: Board;
+    const gb = genBoard(` |
+                          |
+                          |YYRRRY
+                          |RYYRYR
+                          |---  ----`);
+    const token: Token = 'YELLOW'
+    if (gb.error === undefined) {
+      b = gb.board;
+      const R = service.init(b);
+      expect(service.winner(3)).toEqual('RED');
+    }
+
+  });
+
+  it('test 4 / yellow should win', () => {
+    let b: Board;
+    const gb = genBoard(` |
+                          | RY
+                          | RRR
+                          |RYYYY
+                          |-------`);
+    const token: Token = 'YELLOW'
+    if (gb.error === undefined) {
+      b = gb.board;
+      const R = service.init(b);
+      expect(service.winner(3)).toEqual('YELLOW');
+    }
+
+  });
+
+  it('test 5 / RED win with 4point', () => {
+    let b: Board;
+    const gb = genBoard(` |    R
+                          | RYRY
+                          |YRRRY
+                          |YRYYR
+                          |-------`);
+    const token: Token = 'YELLOW'
+    if (gb.error === undefined) {
+      b = gb.board;
+      const R = service.init(b);
+      expect(service.winner(4)).toEqual('RED');
+    }
+
+  });
+
+  it('test 6 / YELLOW win with 5point ', () => {
+    let b: Board;
+    const gb = genBoard(` |
+                          | YR
+                          |RRRR
+                          |RYYYYY
+                          |-------`);
+    const token: Token = 'YELLOW'
+    if (gb.error === undefined) {
+      b = gb.board;
+      const R = service.init(b);
+      expect(service.winner(5)).toEqual('YELLOW');
+    }
   });
 });
 
